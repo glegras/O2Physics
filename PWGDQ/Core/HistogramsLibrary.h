@@ -301,6 +301,11 @@ void o2::aod::dqhistograms::DefineHistograms(HistogramManager* hm, const char* h
     hm->AddHistogram(histClass, "cosThetaHE", "", false, 100, -1., 1., VarManager::kCosThetaHE);
     hm->AddHistogram(histClass, "PhiV", "", false, 100, 0.0, 3.2, VarManager::kPairPhiv);
     hm->AddHistogram(histClass, "Mass_Pt_PhiV", "", false, 125, 0.0, 5.0, VarManager::kMass, 100, 0.0, 20.0, VarManager::kPt, 100, 0.0, 3.2, VarManager::kPairPhiv);
+    if (subGroupStr.Contains("dalitz")) {
+      hm->AddHistogram(histClass, "MassLow", "", false, 500, 0.0, 0.5, VarManager::kMass);
+      hm->AddHistogram(histClass, "PsiPair", "", false, 200, -1.5, 1.5, VarManager::kPsiPair);
+      hm->AddHistogram(histClass, "PsiPair_DeltaPhi", "", false, 100, -0.5, 0.5, VarManager::kDeltaPhiPair, 100, -1.5, 1.5, VarManager::kPsiPair);
+    }
     if (subGroupStr.Contains("vertexing-barrel")) {
       hm->AddHistogram(histClass, "Lxy", "", false, 100, 0.0, 10.0, VarManager::kVertexingLxy);
       hm->AddHistogram(histClass, "Lxyz", "", false, 100, 0.0, 10.0, VarManager::kVertexingLxyz);
