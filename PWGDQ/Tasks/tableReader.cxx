@@ -543,7 +543,6 @@ struct AnalysisPrefilterSelection {
     for (auto& track : tracks) {
       prefilter(static_cast<int>(dalitzmap[track.globalIndex()]));
     }
-
   }
 
   void processDummy(MyEvents&)
