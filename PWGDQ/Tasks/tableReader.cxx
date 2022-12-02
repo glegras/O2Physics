@@ -239,7 +239,7 @@ struct AnalysisTrackSelection {
 
     trackSel.reserve(tracks.size());
     uint32_t filterMap = 0;
-    uint8_t filterMapDalitz  = 0.;
+    uint8_t filterMapDalitz = 0.;
     int iCut = 0;
 
     for (auto& track : tracks) {
@@ -547,7 +547,6 @@ struct AnalysisPrefilterSelection {
 
   void processDummy(MyEvents&)
   {
-
   }
 
   PROCESS_SWITCH(AnalysisPrefilterSelection, processBarrelSkimmed, "Run Dalitz selection on reduced tracks", false);
